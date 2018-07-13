@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    _incrementCounter();
+    _updateImage();
   }
 
   Future<void> _updateImage() async {
@@ -72,7 +72,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      body: _image_url == null ? new Container (): new Image.network(_image_url, fit: BoxFit.cover),
+      body: new Container(
+      child: _image_url == null ? new Container(): new Image.network(_image_url, fit: BoxFit.cover),
+    ),
     );
   }
 }
